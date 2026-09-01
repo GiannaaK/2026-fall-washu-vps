@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Gianna's Profile</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="shortcut icon" type="image/png" href="Giannaimage.png">
+
+        <!-- 
+
+        INSTRUCTIONS:
+
+        1) If you don't already have it, download the program VSCode.
+           (It's a text code editor. If you have / prefer a different one, that's fine too.)
+
+        2) Open up VSCode and start a new file.
+
+        2) Copy the complete code from my example. (This code you're reading here.)
+
+        * Paste this code into your new file.
+
+        * Save this file as the name "profile.html"
+          and save it somewhere on your computer that you can easily access.
+
+        * I would recommend putting your "profile.html" in a new folder called 
+          "VPS Class Website" or something similar, and putting that folder somewhere
+          on your computer you can remember!
+         
+        3) Open this file ("profile.html") in a web browser — like Chrome, Firefox, Safari, Arc, etc.
+
+        4) Go back to VSCode and make sure to have "profile.html" open.
+
+        5) Modify your profile.html to make your own profile page for this class.
+
+        * To customize this page with your own information, edit the content in profile.html with your personal details
+        * To change the styling (layout and design), edit the CSS which is between the <style> and </style> tags
+          —  For example to change the "energy" color, search for "#energy" and edit the color below
+        * To add your own profile image, add a JPG image file called "avatar.jpg" to the same directory as this profile.html
+
+          Other tips:
+
+        * Scroll below and follow the comments for guidance.
+
+        * Note that anything after <body> and before </body> will be shown visibly on the page.
+
+        * Try making a small change, saving your file (command + S on Mac), 
+          and then refreshing the version in your web browser to see the update.
+       
+        * Do this again and again, keep going...
+
+        * Make sure it looks, reads, and feels accurate to you.
+
+        * Fill in all the sections — your name, your favorite fruit, your motto, etc.
+        
+        * This website is written in HTML and CSS. 
+
+          - Right now it's not important to know everything about them.
+          - Just try editing a little of this page and viewing the result after you press "Save."
+          - Keep doing this until you like your own profile page...
+            
+        6) We will share our profiles near the end of class!
+
+        ***
+
+        Next class, we will:
+
+        1) Upload our profiles onto our class websites
+           (creating a GitHub repo, enabling GitHub pages, etc.)
+
+        2) Make a "webring" and link all our profiles together!
+
+        How to:
+        1) Ask the person to your left and right for their profile URL and name
+        2) Put the URL in between the quotes in <a href="" part
+        3) Put their full name where it says (Full Name)
+
+        -->
+        
+        <style>
+            *, *:before, *:after { box-sizing: border-box; }
+            body {
+                margin: 0;
+            }
+
+            /* Globals */
+            h1, h2, h3, h4, p, ol, ul, li, a, figure, p:last-child, ul:last-child, ol:last-child {
+                margin: 0;
+                padding: 0;
+            }
+            li {list-style-position: inside;}
+            h2, h4 {
+                margin-bottom: .5em;
+            }
+            p, ul, ol {
+                margin-bottom: 1em;
+                line-height: 1.3;
+            }
+            img {width: 100%;}
+            header, section, aside, footer {
+                padding: 8px;
+                border: 1px solid #abbdc4;
+                border-radius: 2px;
+                /* background: #f0f0f0; */
+            }
+            header {
+                display: grid;
+                grid-template-columns: 1fr 100px;
+                grid-gap: 10px;
+            }
+            header, footer, .section-wrapper {background: #dce7f4;}
+            .medium {font-size: 125%;}
+            .large {font-size: 400%;}
+            figure {height: 100px;}
+            blockquote {
+                border-left: 5px solid #dddddd;
+                padding-left: 10px;
+            }
+            .credit {font-style: italic;}
+
+            /* Profile Container */
+            #container {
+                max-width: 620px;
+                margin: 0 auto;
+                padding: 10px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+                position: relative;
+                display: grid;
+                grid-gap: 10px;
+            }
+
+            /* Layouts */
+            .two-column {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-gap: 10px;
+                grid-auto-rows: minmax(200px, 1fr);
+            }
+            .section-wrapper {
+                display: grid;
+                grid-gap: 10px;
+            }
+            .fruit {
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+            }
+            section {background: #fff;}
+
+            #energy-box {
+                background: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+            }
+            #energy-box figcaption {
+                position: absolute;
+                bottom: 8px;
+                left: 8px;
+                font-style: italic;
+            }
+            #energy {
+                width: 80px;
+                height: 80px;
+                margin-top: -20px;
+                background: rgb(102, 20, 39);
+                border-radius: 100%;
+                filter: blur(20px);
+            }
+
+            /* Pagination */
+            #pagination {
+                display: grid;
+                grid-template-columns: max-content 1fr max-content;
+            }
+            #pagination #next {
+                grid-column: 3/3;
+                text-align: right;
+            }
+
+            /* Media Queries */
+            @media (max-width:535px) {
+                #container {
+                    margin-top: 0;
+                }
+            }
+        </style>
+    </head>
+        
+    <body>
+        <div id="container">
+            <header>
+                <div id="bio">
+                    <h1>Giana's profile</h1>
+                    <em>do it for your future self</em>
+                </div>
+                <figure>
+                    <a href="Giannaimage.png" target="_blank"><img src="Giannaimage.png" alt="A photo of Gianna" /></a>
+                </figure>
+            </header>
+            <section class="two-column section-wrapper">
+                <section id="energy-box">
+                        <figure id="energy"></figure>
+                        <figcaption>Energy: Passion</figcaption>
+                </section>
+                <section class="medium">
+                    <p>If I wasn't a designer and student I would be an <b>small cafe owner</b>.</p>
+                </section>
+                <section class="medium">
+                    My favorite place in St. Louis is <b>Forest Park</b>.
+                </section>
+                <section class="fruit">
+                    <p><em>Favorite fruit:</em></p><br />
+                    <p class="large">🍉</p>
+                </section>
+            </section>
+            <section class="section-wrapper">
+                <section>
+                    <h2>What do you want to learn in this course?</h2>
+                    <p>I want to learn how to turn my visual design ideas into websites that actually work. As a design student, I am used to thinking about layout, typography, branding, and user experience, but I want to become more comfortable with the technical side of creating for the web. I’m especially interested in learning how coding can become part of my design process rather than something separate from it.</p>
+                </section>
+                <section>
+                    <h2>Tell us about an early experience with computers or the internet</h2>
+                    <p>One of my earliest memories of using the internet was playing online games and exploring websites as a kid. I was always interested in how different websites looked and felt, even before I really understood what design was. For games, I especially liked customizing profiles, choosing colors and images, and decorating my village and character. Looking back, I think those experiences were some of my first introductions to digital design and probably influenced why I became interested in visual communication.</p>
+                </section>
+                <section>
+                    <h2>What will the web look like in 10 years from now?</h2>
+                    <p>I think the web will become much more personalized, interactive, and integrated into everyday life. Instead of only visiting websites through a screen, we may interact with digital information through AI assistants, wearable devices, and other environments. At the same time, I hope designers will think more carefully about privacy, transparency, and how this highly-personalized technology affects people emotionally. I think the biggest challenge will be making technology feel more helpful and human without allowing it to become overwhelming or manipulative.</p>
+                </section>
+                <section>
+                    <h2>Favorite HTML Elements So Far</h2>
+                    <ol>
+                        <li>&lt;img&gt;</li>
+                        <li>&lt;p&gt;</li>
+                        <li>&lt;button&gt;</li>
+                    </ol>
+                </section>
+                <section>
+                    <h2>Songs for Designing & Coding</h2>
+                    <ul>
+                        <li><a href="https://youtu.be/2BegA7SRYIQ?si=QTn7aQNzHKuG9rPe">Christmas Jazz Playlist</a></li>
+                        <li><a href="https://open.spotify.com/track/6A18pcBX8QZGwI8EkR7aIP?si=0bc012713d204716">Tate_Siren Sounds</a></li>
+                    </ul>
+                </section>
+            </section>
+            <footer>
+                <h4>Webring</h4>
+                <p id="pagination">
+                    <a href="" id="previous">Prev<br /> (Full Name)</a>
+                    <a href="" id="next">Next<br /> (Full Name)</a>
+                </p>
+            </footer>
+        </div>
+    </body>
+</html>
