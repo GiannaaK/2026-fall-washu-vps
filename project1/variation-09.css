@@ -1,0 +1,792 @@
+/* =========================================================
+   K-BOP STL — VARIATION 19
+   Minimal Editorial / Bakery-Inspired Layout
+
+   Structure
+   01. Variables
+   02. Global / Base Styles
+   03. Fixed Navigation
+   04. Hero
+   05. Manifesto
+   06. Featured Items
+   07. Split Story Section
+   08. Main Menu Blocks
+   09. Small Menu Grid
+   10. Drinks
+   11. Visit Section
+   12. Footer
+   13. Animation
+   14. Responsive
+   ========================================================= */
+
+
+/* =========================================================
+   01. VARIABLES
+   ========================================================= */
+
+:root {
+  --cream: #fffdf3;
+  --gold: #ffc107;
+  --soft: #f9e076;
+  --brown: #895129;
+  --ink: #1d1d1b;
+}
+
+
+/* =========================================================
+   02. GLOBAL / BASE STYLES
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background: var(--cream);
+  color: var(--ink);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* =========================================================
+   03. FIXED NAVIGATION
+   ========================================================= */
+
+.nav {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 48px;
+
+  z-index: 20;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 18px;
+
+  border-bottom: 1px solid var(--ink);
+
+  background: rgba(255, 253, 243, 0.96);
+}
+
+
+/* ---------- Logo ---------- */
+
+.logo {
+  font-weight: 900;
+  letter-spacing: -0.06em;
+
+  text-decoration: none;
+}
+
+
+/* ---------- Navigation links ---------- */
+
+.nav nav {
+  display: flex;
+
+  gap: 22px;
+}
+
+.nav nav a {
+  font-size: 10px;
+
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   04. HERO
+   ========================================================= */
+
+.hero {
+  min-height: 100vh;
+
+  padding-top: 48px;
+
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+
+  border-bottom: 1px solid var(--ink);
+}
+
+
+/* ---------- Shared hero columns ---------- */
+
+.hero-side,
+.hero-center {
+  min-height: calc(100vh - 48px);
+
+  padding: 28px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+
+/* ---------- Left / right hero columns ---------- */
+
+.hero-side {
+  justify-content: space-between;
+}
+
+
+/* ---------- Center hero column ---------- */
+
+.hero-center {
+  align-items: center;
+
+  border-left: 1px solid var(--ink);
+  border-right: 1px solid var(--ink);
+
+  text-align: center;
+}
+
+
+/* ---------- Small hero labels ---------- */
+
+.smallcap,
+.hero-side p {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+
+/* ---------- Main hero title ---------- */
+
+.hero h1 {
+  margin: 22px 0 25px;
+
+  font-size: clamp(72px, 9vw, 150px);
+  line-height: 0.78;
+  letter-spacing: -0.08em;
+}
+
+
+/* ---------- Hero description ---------- */
+
+.hero-copy {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+
+/* ---------- Abstract food objects ---------- */
+
+.food-object {
+  width: min(24vw, 300px);
+
+  aspect-ratio: 1.5 / 1;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--brown);
+  border-radius: 46% 54% 50% 50%;
+
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 0.12em;
+
+  transition:
+    transform 0.6s ease,
+    border-radius 0.6s ease;
+}
+
+.object-a {
+  background: var(--gold);
+
+  transform: rotate(-4deg);
+}
+
+.object-b {
+  background: var(--soft);
+
+  transform: rotate(4deg);
+}
+
+.food-object:hover {
+  transform:
+    rotate(0deg)
+    scale(1.04);
+
+  border-radius: 30px;
+}
+
+
+/* =========================================================
+   05. MANIFESTO
+   ========================================================= */
+
+.manifesto {
+  padding: 70px 10vw 55px;
+
+  border-bottom: 1px solid var(--ink);
+}
+
+.manifesto span {
+  font-size: 9px;
+}
+
+.manifesto h2 {
+  max-width: 850px;
+
+  margin: 25px auto 0;
+
+  font-size: clamp(42px, 5vw, 80px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+}
+
+
+/* =========================================================
+   06. FEATURED ITEMS
+   ========================================================= */
+
+.featured {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  border-bottom: 1px solid var(--ink);
+}
+
+
+/* ---------- Individual featured card ---------- */
+
+.featured article {
+  padding: 28px;
+
+  border-right: 1px solid var(--ink);
+}
+
+.featured h3 {
+  margin: 22px 0 6px;
+
+  font-size: 16px;
+}
+
+.featured p {
+  font-family: Georgia, serif;
+  font-size: 11px;
+}
+
+
+/* ---------- Abstract featured object ---------- */
+
+.mini-object {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+}
+
+.mini-object::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 25%;
+
+  border: 1px solid var(--brown);
+  border-radius: 50%;
+
+  transition: all 0.4s ease;
+}
+
+
+/* ---------- Featured object variations ---------- */
+
+.mini-1::before {
+  background: var(--gold);
+
+  border-radius: 48% 52% 42% 58%;
+}
+
+.mini-2::before {
+  background: var(--soft);
+
+  border-radius: 55% 45% 55% 45%;
+}
+
+.mini-3::before {
+  background: var(--cream);
+
+  box-shadow:
+    inset 0 0 0 14px var(--soft);
+}
+
+.mini-4::before {
+  background: var(--brown);
+}
+
+
+/* ---------- Featured hover ---------- */
+
+.featured article:hover .mini-object::before {
+  inset: 19%;
+
+  transform: rotate(8deg);
+}
+
+
+/* =========================================================
+   07. SPLIT STORY SECTION
+   ========================================================= */
+
+.split-story {
+  min-height: 70vh;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  border-bottom: 1px solid var(--ink);
+}
+
+
+/* ---------- Shared story panels ---------- */
+
+.texture-panel,
+.quote-panel {
+  padding: 45px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+
+/* ---------- Texture panel ---------- */
+
+.texture-panel {
+  background: var(--brown);
+  color: var(--cream);
+
+  overflow: hidden;
+}
+
+.texture-panel h2 {
+  font-size: clamp(60px, 8vw, 120px);
+  letter-spacing: -0.08em;
+}
+
+
+/* ---------- Animated grain ---------- */
+
+.grain {
+  width: 80%;
+
+  aspect-ratio: 1 / 1;
+
+  margin: auto;
+
+  border-radius: 50%;
+
+  background:
+    repeating-radial-gradient(
+      circle,
+      var(--gold) 0 8px,
+      var(--brown) 9px 18px
+    );
+
+  animation:
+    drift 9s ease-in-out infinite alternate;
+}
+
+
+/* ---------- Quote panel ---------- */
+
+.quote-panel {
+  background: var(--soft);
+}
+
+.quote-panel > p {
+  font-size: 11px;
+}
+
+.quote-panel h2 {
+  font-size: clamp(48px, 6vw, 92px);
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+}
+
+.quote-panel a {
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   08. MAIN MENU BLOCKS
+   ========================================================= */
+
+.menu-block {
+  display: grid;
+  grid-template-columns: 30% 70%;
+
+  border-bottom: 1px solid var(--ink);
+}
+
+
+/* ---------- Alternate menu section ---------- */
+
+.menu-block.alt .menu-heading {
+  background: var(--soft);
+}
+
+
+/* ---------- Menu section heading ---------- */
+
+.menu-heading {
+  padding: 45px;
+
+  border-right: 1px solid var(--ink);
+}
+
+.menu-heading span {
+  font-size: 9px;
+}
+
+.menu-heading h2 {
+  margin: 50px 0 15px;
+
+  font-size: clamp(46px, 5vw, 78px);
+  letter-spacing: -0.06em;
+}
+
+.menu-heading p {
+  font-family: Georgia, serif;
+  font-size: 13px;
+}
+
+
+/* ---------- Menu row ---------- */
+
+.menu-row {
+  min-height: 120px;
+
+  padding: 22px 28px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom: 1px solid var(--ink);
+}
+
+.menu-row h3 {
+  margin: 0 0 8px;
+
+  font-size: 18px;
+}
+
+.menu-row p {
+  max-width: 500px;
+
+  margin: 0;
+
+  font-family: Georgia, serif;
+  font-size: 12px;
+}
+
+.menu-row strong {
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   09. SMALL MENU GRID
+   Sides / Add-ons
+   ========================================================= */
+
+.small-menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  border-bottom: 1px solid var(--ink);
+}
+
+.small-menu-grid > div {
+  padding: 40px;
+
+  border-right: 1px solid var(--ink);
+}
+
+.small-menu-grid h2 {
+  font-size: 46px;
+  letter-spacing: -0.05em;
+}
+
+
+/* ---------- Simple menu rows ---------- */
+
+.simple-list p,
+.drink-grid p {
+  padding: 8px 0;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  border-bottom:
+    1px solid rgba(29, 29, 27, 0.25);
+
+  font-family: Georgia, serif;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   10. DRINKS
+   ========================================================= */
+
+.drinks {
+  display: grid;
+  grid-template-columns: 30% 70%;
+
+  border-bottom: 1px solid var(--ink);
+}
+
+
+/* ---------- Drink grid ---------- */
+
+.drink-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.drink-grid > div {
+  padding: 30px;
+
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+
+.drink-grid h3 {
+  font-size: 10px;
+  letter-spacing: 0.13em;
+}
+
+
+/* =========================================================
+   11. VISIT SECTION
+   ========================================================= */
+
+.visit {
+  min-height: 65vh;
+
+  padding: 55px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  background: var(--gold);
+}
+
+.visit h2 {
+  margin: 40px 0 0;
+
+  font-size: clamp(90px, 14vw, 220px);
+  line-height: 0.68;
+  letter-spacing: -0.08em;
+}
+
+.visit span {
+  font-size: 9px;
+}
+
+.visit-info {
+  width: 240px;
+
+  font-family: Georgia, serif;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   12. FOOTER
+   ========================================================= */
+
+footer {
+  padding: 14px 18px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  background: var(--brown);
+  color: var(--cream);
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   13. ANIMATION
+   ========================================================= */
+
+@keyframes drift {
+
+  from {
+    transform:
+      translate(-8px, -8px)
+      rotate(-3deg);
+  }
+
+  to {
+    transform:
+      translate(10px, 10px)
+      rotate(3deg);
+  }
+
+}
+
+
+/* =========================================================
+   14. RESPONSIVE
+   ========================================================= */
+
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 850px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-side {
+    min-height: 42vh;
+  }
+
+  .hero-center {
+    min-height: 58vh;
+
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+    border-left: 0;
+    border-right: 0;
+  }
+
+  .food-object {
+    width: min(60vw, 300px);
+  }
+
+  .featured {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .split-story,
+  .menu-block,
+  .drinks {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-heading {
+    border-right: 0;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .small-menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 560px) {
+
+  .nav nav {
+    gap: 10px;
+  }
+
+  .hero-side,
+  .hero-center {
+    padding: 20px;
+  }
+
+  .featured {
+    grid-template-columns: 1fr;
+  }
+
+  .featured article {
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .manifesto {
+    padding: 50px 20px;
+  }
+
+  .texture-panel,
+  .quote-panel {
+    padding: 25px;
+  }
+
+  .small-menu-grid > div {
+    padding: 25px;
+  }
+
+  .drink-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visit {
+    padding: 40px 20px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 50px;
+  }
+
+  .visit-info {
+    width: 100%;
+  }
+
+}
+
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+}

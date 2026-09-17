@@ -1,0 +1,27 @@
+* { box-sizing: border-box; }
+body { margin: 0; }
+.hero { width: 100%; min-height: 540px; border-bottom: 8px solid; position: relative; }
+.wordmark { position: absolute; top: 0; left: 0; width: 22%; height: 100%; padding: 20px; border-right: 8px solid; }
+.hero-copy { position: absolute; top: 0; right: 0; width: 78%; min-height: 540px; padding: 48px; }
+.hero-copy h1 { margin: 0 0 50px 0; }
+.menu-block { width: 100%; border-bottom: 4px solid; display: block; position: relative; }
+.section-code { position: absolute; top: 0; left: 0; width: 12%; height: 100%; padding: 18px; border-right: 4px solid; }
+.section-content { width: 88%; margin-left: 12%; padding: 24px 40px 40px 40px; }
+.section-content h2 { margin: 0 0 24px 0; }
+.note { padding-bottom: 16px; border-bottom: 1px solid; }
+article { width: 100%; padding: 15px 0; border-bottom: 1px solid; }
+.topline { width: 100%; display: block; }
+.topline b { display: inline-block; width: 74%; }
+.topline span { display: inline-block; width: 24%; }
+article p { width: 76%; margin: 8px 0 0 0; }
+.site-info { margin: 0; padding: 34px 12% 50px 12%; border-bottom: 8px solid; }
+@media (max-width: 620px) {
+  .hero { min-height: 420px; }
+  .wordmark { width: 26%; }
+  .hero-copy { width: 74%; min-height: 420px; padding: 24px; }
+  .section-code { width: 17%; padding: 12px; }
+  .section-content { width: 83%; margin-left: 17%; padding: 20px; }
+  article p { width: 100%; }
+}
+
+

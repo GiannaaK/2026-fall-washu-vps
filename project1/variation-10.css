@@ -1,0 +1,721 @@
+/* =========================================================
+   K-BOP STL — VARIATION 20
+   Minimal Product Catalog
+
+   Structure
+   01. Variables
+   02. Global / Base Styles
+   03. Fixed Top Bar
+   04. Intro / Hero
+   05. Two-Column Note
+   06. Bowl Collection
+   07. Special Menu Catalog
+   08. Utility Sections
+   09. Closing Section
+   10. Footer
+   11. Responsive
+   ========================================================= */
+
+
+/* =========================================================
+   01. VARIABLES
+   ========================================================= */
+
+:root {
+  --paper: #fffef8;
+  --line: #2b2b2b;
+  --blue: #7fa6ef;
+  --brown: #895129;
+  --gold: #ffc107;
+}
+
+
+/* =========================================================
+   02. GLOBAL / BASE STYLES
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background: var(--paper);
+  color: var(--line);
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* =========================================================
+   03. FIXED TOP BAR
+   ========================================================= */
+
+.topline {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 28px;
+
+  z-index: 30;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  align-items: center;
+
+  padding: 0 8px;
+
+  border-bottom: 1px solid var(--line);
+
+  background: rgba(255, 254, 248, 0.95);
+
+  font-size: 7px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+}
+
+.topline span:nth-child(2) {
+  text-align: center;
+}
+
+.topline span:nth-child(3) {
+  text-align: right;
+}
+
+
+/* =========================================================
+   04. INTRO / HERO
+   ========================================================= */
+
+.intro {
+  min-height: 72vh;
+
+  padding-top: 28px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  border-bottom: 1px solid var(--line);
+
+  background:
+    linear-gradient(
+      90deg,
+      #f9f7ef 0 50%,
+      #dbe7fb 50%
+    );
+}
+
+
+/* ---------- Hero text side ---------- */
+
+.intro-copy {
+  padding: 60px 7vw;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.intro-copy p {
+  font-size: 9px;
+  line-height: 1.5;
+  letter-spacing: 0.11em;
+}
+
+.intro h1 {
+  margin: 35px 0;
+
+  font-size: clamp(82px, 12vw, 190px);
+  line-height: 0.75;
+  letter-spacing: -0.08em;
+}
+
+
+/* ---------- Hero button ---------- */
+
+.intro-copy a {
+  padding: 10px 18px;
+
+  border: 1px solid var(--line);
+  border-radius: 999px;
+
+  font-size: 9px;
+
+  text-decoration: none;
+
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.intro-copy a:hover {
+  background: var(--line);
+  color: var(--paper);
+}
+
+
+/* ---------- Hero bowl side ---------- */
+
+.intro-object {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  border-left: 1px solid var(--line);
+
+  overflow: hidden;
+}
+
+
+/* ---------- Bowl / cup ---------- */
+
+.cup {
+  width: min(28vw, 360px);
+  height: min(36vw, 460px);
+
+  padding: 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  border: 1px solid var(--line);
+  border-radius: 12px 12px 70px 70px;
+
+  transform: rotate(2deg);
+
+  transition: transform 0.7s ease;
+}
+
+.cup:hover {
+  transform:
+    rotate(-2deg)
+    translateY(-8px);
+}
+
+
+/* ---------- Bowl layers ---------- */
+
+.layer {
+  flex: 1;
+
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.layer-1 {
+  background: #ffffff;
+}
+
+.layer-2 {
+  background: #f3d785;
+}
+
+.layer-3 {
+  background: var(--brown);
+}
+
+.layer-4 {
+  background: var(--blue);
+}
+
+
+/* =========================================================
+   05. TWO-COLUMN NOTE
+   ========================================================= */
+
+.two-col-note {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.two-col-note > div {
+  min-height: 170px;
+
+  padding: 36px;
+
+  border-right: 1px solid var(--line);
+}
+
+.two-col-note h2 {
+  margin: 0;
+
+  font-family: Georgia, serif;
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.two-col-note p {
+  max-width: 440px;
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   06. BOWL COLLECTION
+   ========================================================= */
+
+.collection {
+  border-bottom: 1px solid var(--line);
+
+  overflow: hidden;
+}
+
+
+/* ---------- Collection title ---------- */
+
+.collection > header {
+  padding: 22px;
+
+  border-bottom: 1px solid var(--line);
+
+  text-align: center;
+}
+
+.collection > header h2 {
+  margin: 0;
+
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+
+/* ---------- Horizontal product track ---------- */
+
+.collection-track {
+  display: flex;
+
+  overflow-x: auto;
+
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+
+/* ---------- Individual product card ---------- */
+
+.collection-track article {
+  position: relative;
+
+  min-width: 260px;
+  min-height: 390px;
+
+  padding: 18px;
+
+  border-right: 1px solid var(--line);
+
+  scroll-snap-align: start;
+}
+
+.collection-track article > span {
+  font-size: 8px;
+}
+
+.collection-track h3 {
+  margin: 20px 0 6px;
+
+  font-size: 13px;
+
+  text-align: center;
+}
+
+.collection-track p {
+  font-size: 10px;
+  line-height: 1.45;
+
+  text-align: center;
+}
+
+.collection-track strong {
+  position: absolute;
+
+  right: 16px;
+  bottom: 14px;
+
+  font-size: 10px;
+}
+
+
+/* ---------- Product shapes ---------- */
+
+.product-shape {
+  width: 130px;
+  height: 160px;
+
+  margin: 28px auto 10px;
+
+  border: 1px solid var(--line);
+
+  transition:
+    transform 0.35s ease,
+    border-radius 0.35s ease;
+}
+
+.s1 {
+  background: var(--gold);
+
+  border-radius: 48% 52% 55% 45%;
+}
+
+.s2 {
+  background: var(--brown);
+
+  border-radius: 12px;
+}
+
+.s3 {
+  background: var(--blue);
+
+  border-radius: 50%;
+}
+
+.s4 {
+  background: #f0ead7;
+
+  border-radius: 40% 20% 50% 25%;
+}
+
+
+/* ---------- Product hover ---------- */
+
+.collection-track article:hover .product-shape {
+  transform:
+    translateY(-8px)
+    rotate(3deg);
+
+  border-radius: 28px;
+}
+
+
+/* =========================================================
+   07. SPECIAL MENU CATALOG
+   ========================================================= */
+
+/* ---------- Section heading ---------- */
+
+.catalog-section > header {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+
+  border-bottom: 1px solid var(--line);
+}
+
+.catalog-section > header > * {
+  margin: 0;
+
+  padding: 18px;
+
+  border-right: 1px solid var(--line);
+}
+
+.catalog-section > header span {
+  font-size: 8px;
+}
+
+.catalog-section > header h2 {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+
+/* ---------- Catalog grid ---------- */
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  border-bottom: 1px solid var(--line);
+}
+
+.catalog-grid article {
+  position: relative;
+
+  min-height: 230px;
+
+  padding: 18px;
+
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.catalog-grid article span {
+  font-size: 8px;
+}
+
+.catalog-grid h3 {
+  margin: 35px 0 10px;
+
+  font-size: 16px;
+}
+
+.catalog-grid p {
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+.catalog-grid strong {
+  position: absolute;
+
+  right: 15px;
+  bottom: 14px;
+
+  font-size: 10px;
+}
+
+.catalog-grid article:hover {
+  background: #f8f4e6;
+}
+
+
+/* =========================================================
+   08. UTILITY SECTIONS
+   Sides / Add-ons / Drinks
+   ========================================================= */
+
+.utility-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  border-bottom: 1px solid var(--line);
+}
+
+
+/* ---------- Panel ---------- */
+
+.panel {
+  padding: 30px;
+
+  border-right: 1px solid var(--line);
+}
+
+.panel > span {
+  font-size: 8px;
+}
+
+.panel h2 {
+  margin: 35px 0;
+
+  font-size: 46px;
+  letter-spacing: -0.05em;
+}
+
+
+/* ---------- Panel item rows ---------- */
+
+.panel p {
+  margin: 0;
+
+  padding: 10px 0;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  gap: 14px;
+
+  border-bottom: 1px solid rgba(43, 43, 43, 0.25);
+
+  font-size: 11px;
+}
+
+.panel p em {
+  grid-column: 1 / 3;
+
+  font-family: Georgia, serif;
+  font-size: 10px;
+  font-style: normal;
+}
+
+
+/* ---------- Full-width drink panel ---------- */
+
+.panel.wide {
+  grid-column: 1 / 3;
+
+  border-top: 1px solid var(--line);
+}
+
+
+/* ---------- Drink categories ---------- */
+
+.drink-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.drink-columns > div {
+  padding: 18px;
+
+  border-right: 1px solid var(--line);
+}
+
+.drink-columns h3 {
+  font-size: 9px;
+  letter-spacing: 0.11em;
+}
+
+
+/* =========================================================
+   09. CLOSING SECTION
+   ========================================================= */
+
+.closing {
+  min-height: 65vh;
+
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+
+  background: #f3efe4;
+}
+
+.closing > div {
+  padding: 55px;
+
+  border-right: 1px solid var(--line);
+}
+
+.closing > div > p:first-child {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+}
+
+.closing h2 {
+  margin: 80px 0 0;
+
+  font-size: clamp(90px, 14vw, 220px);
+  line-height: 0.68;
+  letter-spacing: -0.08em;
+}
+
+.closing-info {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   10. FOOTER
+   ========================================================= */
+
+footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  padding: 12px;
+
+  background: var(--line);
+  color: var(--paper);
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   11. RESPONSIVE
+   ========================================================= */
+
+
+/* ---------- Tablet ---------- */
+
+@media (max-width: 900px) {
+
+  .intro {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-object {
+    min-height: 55vh;
+
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .cup {
+    width: min(55vw, 360px);
+    height: min(70vw, 460px);
+  }
+
+  .catalog-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .drink-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .closing {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 580px) {
+
+  .two-col-note {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-copy {
+    padding: 45px 20px;
+  }
+
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .utility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel.wide {
+    grid-column: auto;
+  }
+
+  .drink-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .closing > div {
+    padding: 40px 20px;
+  }
+}
+
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
