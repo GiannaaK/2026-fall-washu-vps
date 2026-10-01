@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-Bop STL</title>
+  <meta name="description" content="K-Bop STL — Korean cupbop, specials, sides, add-ons and drinks on Delmar Loop, St. Louis.">
+
+  <!-- Fonts: Anton (display), Nunito (body), Gaegu (playful Korean accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Gaegu:wght@400;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="final.css">
+</head>
+<body>
+  
+  <header class="site-header">
+    <a href="#top" class="logo">K-BOP</a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="#menu">Menu</a>
+      <a href="#addons">Add-ons</a>
+      <a href="#about">About</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+  </header>
+
+  <main>
+
+
+    <section class="hero" id="top">
+      <div class="hero-title-wrap">
+
+        <!-- Circle #1 with animated rice grains -->
+        <div class="oval oval-1" aria-hidden="true">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="line">Cup</span>
+          <span class="line">Bop</span>
+        </h1>
+
+
+        <div class="oval oval-2" aria-hidden="true">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
+      <p class="hero-ko">한 컵에 담은 한국의 맛</p>
+      <p class="hero-sub">Korean comfort food in St. Louis</p>
+
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-fill">See the Menu</a>
+        <a href="#visit" class="btn btn-line">Visit Us</a>
+      </div>
+
+      <div class="hero-info">
+        <div class="hero-hours">
+          <h3>Hours</h3>
+          <p><strong>MON–SAT</strong> | 11:00 – 21:00</p>
+          <p><strong>SUN</strong> | 11:00 – 20:00</p>
+        </div>
+        <div class="hero-location">
+          <h3>Location</h3>
+          <p>St. Louis, Missouri</p>
+          <p>6120 Delmar Blvd, STL 63112</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu" id="menu">
+      <div class="section-head">
+        <span class="ko-eyebrow">메뉴</span>
+        <h2>MENU</h2>
+        <p class="section-note">Tap a category to open the menu</p>
+      </div>
+
+      <input type="radio" name="menu-cat" id="cat-cupbop" class="sr-only" checked>
+      <input type="radio" name="menu-cat" id="cat-specials" class="sr-only">
+      <input type="radio" name="menu-cat" id="cat-sides" class="sr-only">
+      <input type="radio" name="menu-cat" id="cat-drinks" class="sr-only">
+
+      <div class="cat-row">
+        <label for="cat-cupbop" class="cat cat-cupbop">
+          <span class="cat-img"><img src="rice.png" alt="Cupbop"></span>
+          <span class="cat-name">CUPBOP</span>
+          <span class="cat-ko">컵밥</span>
+        </label>
+        <label for="cat-specials" class="cat cat-specials">
+          <span class="cat-img"><img src="glitter.png" alt="Specials"></span>
+          <span class="cat-name">SPECIALS</span>
+          <span class="cat-ko">스페셜</span>
+        </label>
+        <label for="cat-sides" class="cat cat-sides">
+          <span class="cat-img"><img src="plate.png" alt="Sides"></span>
+          <span class="cat-name">SIDES</span>
+          <span class="cat-ko">사이드</span>
+        </label>
+        <label for="cat-drinks" class="cat cat-drinks">
+          <span class="cat-img"><img src="soft-drink.png" alt="Drinks"></span>
+          <span class="cat-name">DRINKS</span>
+          <span class="cat-ko">음료</span>
+        </label>
+      </div>
+
+      <div class="panels">
+
+        <div class="panel panel-cupbop">
+          <p class="panel-note">Every cup comes with rice, japchae (Korean glass noodles) &amp; mixed greens.</p>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Beef%20Bulgogi%20Bop.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:491,cg:true" alt="Beef Bulgogi Bop">
+            <div class="item-body">
+              <span class="item-num">01.</span>
+              <div class="item-head">
+                <h3 class="item-name">Beef Bulgogi Bop <span class="ko">소불고기</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$14</span>
+              </div>
+              <p class="item-desc">Sweet &amp; savory thinly sliced beef, Korean Bulgogi</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Pork%20Katsu%20Bop.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:483,cg:true" alt="Pork Katsu Bop">
+            <div class="item-body">
+              <span class="item-num">02.</span>
+              <div class="item-head">
+                <h3 class="item-name">Pork Katsu Bop <span class="ko">돈까스</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$13</span>
+              </div>
+              <p class="item-desc">Breaded, deep fried pork loin with katsu sauce &amp; spicy mayo on top</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Spicy%20Pork%20Bop.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:492,cg:true" alt="Spicy Pork Bop">
+            <div class="item-body">
+              <span class="item-num">03.</span>
+              <div class="item-head">
+                <h3 class="item-name">Spicy Pork Bop <span class="ko">제육볶음</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$13</span>
+              </div>
+              <p class="item-desc">Mild spicy Korean Jeyuk bokkeum with Korean peppers &amp; gochujang</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Shrimp%20Katsu%20Bop.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:485,cg:true">
+            <div class="item-body">
+              <span class="item-num">04.</span>
+              <div class="item-head">
+                <h3 class="item-name">Shrimp Katsu Bop <span class="ko">새우까스</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$14</span>
+              </div>
+              <p class="item-desc">Breaded, deep fried shrimp with katsu sauce &amp; spicy mayo on top</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Chicken%20Teriyaki%20Bop.jpg/:/cr=t:1.89%25,l:0%25,w:100%25,h:96.21%25/rs=w:485,cg:true" alt="Chicken Teriyaki Bop">
+            <div class="item-body">
+              <span class="item-num">05.</span>
+              <div class="item-head">
+                <h3 class="item-name">Chicken Teriyaki Bop <span class="ko">데리야끼</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$12</span>
+              </div>
+              <p class="item-desc">Sweet &amp; savory grilled chicken with house teriyaki sauce</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Chicken%20Katsu%20Bop.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:472,cg:true" alt="Chicken Katsu Bop">
+            <div class="item-body">
+              <span class="item-num">06.</span>
+              <div class="item-head">
+                <h3 class="item-name">Chicken Katsu Bop <span class="ko">치킨까스</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$13</span>
+              </div>
+              <p class="item-desc">Breaded, deep fried chicken breast with katsu sauce &amp; spicy mayo on top</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Spicy%20Chicken%20Bop.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:485,cg:true" alt="Spicy Chicken Bop">
+            <div class="item-body">
+              <span class="item-num">07.</span>
+              <div class="item-head">
+                <h3 class="item-name">Spicy Chicken Bop <span class="ko">매운 치킨</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$12</span>
+              </div>
+              <p class="item-desc">Mild spicy grilled chicken with Korean peppers &amp; gochujang</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Tofu%20Katsu%20Bop.jpg/:/cr=t:0%25,l:2.92%25,w:94.16%25,h:94.16%25/rs=w:497,cg:true,m" alt="Tofu Katsu Bop">
+            <div class="item-body">
+              <span class="item-num">08.</span>
+              <div class="item-head">
+                <h3 class="item-name">Tofu Katsu Bop <span class="ko">두부까스</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$12</span>
+                <span class="badge" title="Vegetarian">V</span>
+              </div>
+              <p class="item-desc">Breaded, deep fried tofu with katsu sauce &amp; spicy mayo on top</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Spicy%20Tofu%20Bop.jpg/:/rs=w:485,cg:true,m" alt="Spicy Tofu Bop">
+            <div class="item-body">
+              <span class="item-num">09.</span>
+              <div class="item-head">
+                <h3 class="item-name">Spicy Tofu Bop <span class="ko">두부조림</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$12</span>
+                <span class="badge badge-vg" title="Vegan">VG</span>
+              </div>
+              <p class="item-desc">Mild spicy &amp; sweet braised tofu, Korean Dubu Jorim</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="panel panel-specials">
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/BiBimBop.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:522,cg:true" alt="BiBimBop">
+            <div class="item-body">
+              <span class="item-num">01.</span>
+              <div class="item-head">
+                <h3 class="item-name">BiBimBop <span class="ko">비빔밥</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$15</span>
+              </div>
+              <p class="item-desc">Rice mixing bowl with assorted vegetables, egg, and house Gochujang sauce.</p>
+              <p class="item-extra">Add any meat, tofu, or 2 mandu +$1.50</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Ttock-Bokki.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:521,cg:true" alt="Ttock-Bokki">
+            <div class="item-body">
+              <span class="item-num">02.</span>
+              <div class="item-head">
+                <h3 class="item-name">Ttock-Bokki <span class="ko">떡볶이</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$9</span>
+                <span class="badge" title="Vegetarian">V</span>
+              </div>
+              <p class="item-desc">Spicy rice cake with fish cake</p>
+              <p class="item-extra">Add any meat, tofu, or 2 mandu +$1.50</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Ttock-Bokki%20Delux.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:514,cg:true" alt="Ttock-Bokki Delux">
+            <div class="item-body">
+              <span class="item-num">03.</span>
+              <div class="item-head">
+                <h3 class="item-name">Ttock-Bokki Delux <span class="ko">떡볶이 디럭스</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$15</span>
+              </div>
+              <p class="item-desc">Spicy rice cake, fish cake, udon, mandu, boiled egg &amp; beef</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Udon.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:507,cg:true" alt="Udon">
+            <div class="item-body">
+              <span class="item-num">04.</span>
+              <div class="item-head">
+                <h3 class="item-name">Udon <span class="ko">우동</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$12</span>
+              </div>
+              <p class="item-desc">House-made broth &amp; thick noodles, fish cakes, scallions &amp; dried seaweed</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Bulgogi%20Japchae.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:515,cg:true" alt="Bulgogi Japchae">
+            <div class="item-body">
+              <span class="item-num">05.</span>
+              <div class="item-head">
+                <h3 class="item-name">Bulgogi Japchae <span class="ko">불고기 잡채</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$9</span>
+              </div>
+              <p class="item-desc">Stir-fried Korean sweet potato noodles with Bulgogi beef, onion, carrots &amp; green onion</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Ramen.jpg/:/cr=t:0%25,l:0.28%25,w:99.44%25,h:99.44%25/rs=w:515,cg:true,m" alt="Ramen">
+            <div class="item-body">
+              <span class="item-num">06.</span>
+              <div class="item-head">
+                <h3 class="item-name">Ramen <span class="ko">라면</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$7</span>
+              </div>
+              <p class="item-desc">Korean spicy instant noodle soup</p>
+              <p class="item-extra">Dine-in only</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Jjamppong.jpg/:/cr=t:0%25,l:0.28%25,w:99.43%25,h:100%25/rs=w:515,cg:true" alt="Jjamppong">
+            <div class="item-body">
+              <span class="item-num">07.</span>
+              <div class="item-head">
+                <h3 class="item-name">Jjamppong <span class="ko">짬뽕</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$18</span>
+              </div>
+              <p class="item-desc">Korean-Chinese spicy noodle soup with seafood and pork broth flavored with gochugaru</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Gimbap.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:512,cg:true" alt="Gimbap">
+            <div class="item-body">
+              <span class="item-num">08.</span>
+              <div class="item-head">
+                <h3 class="item-name">Gimbap <span class="ko">김밥</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$6</span>
+              </div>
+              <p class="item-desc">Korean seaweed rice roll filled with seasoned rice, egg, fishcake, spinach, radish, ham &amp; carrots</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Matcha%20Cheesecakes.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:411,cg:true" alt="Matcha Cheesecake">
+            <div class="item-body">
+              <span class="item-num">09.</span>
+              <div class="item-head">
+                <h3 class="item-name">Matcha Cheesecake <span class="ko">말차 치즈케이크</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$5.50</span>
+              </div>
+              <p class="item-desc">Creamy cheesecake infused with premium matcha for a smooth, earthy sweetness</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Little%20Foodies.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:692,cg:true" alt="Little Foodies kids meal">
+            <div class="item-body">
+              <span class="item-num">10.</span>
+              <div class="item-head">
+                <h3 class="item-name">Little Foodies <span class="ko">어린이 메뉴</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$8</span>
+              </div>
+              <p class="item-desc">Rice &amp; Japchae noodles with choice of meat, tofu, or egg. Served with Apple Juice or Milk and a K-Bop sticker.</p>
+              <p class="item-extra">Ages 2–12 · Add 2 mandu or Spring Roll +$1.50</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="panel panel-sides">
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Mandu-9b89121.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:487,cg:true" alt="Mandu">
+            <div class="item-body">
+              <span class="item-num">01.</span>
+              <div class="item-head">
+                <h3 class="item-name">Mandu <span class="ko">만두</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$7</span>
+              </div>
+              <p class="item-desc">6 Korean pot stickers · Beef &amp; pork</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Egg%20Rolls.jpg/:/cr=t:0%25,l:6.78%25,w:86.43%25,h:86.43%25/rs=w:487,cg:true,m" alt="Egg Rolls">
+            <div class="item-body">
+              <span class="item-num">02.</span>
+              <div class="item-head">
+                <h3 class="item-name">Egg Rolls <span class="ko">에그롤</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$7</span>
+              </div>
+              <p class="item-desc">3 pieces · Pork</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Spring%20Rolls.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:486,cg:true" alt="Spring Rolls">
+            <div class="item-body">
+              <span class="item-num">03.</span>
+              <div class="item-head">
+                <h3 class="item-name">Spring Rolls <span class="ko">스프링롤</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$7</span>
+                <span class="badge" title="Vegetarian">V</span>
+              </div>
+              <p class="item-desc">6 pieces · Veggie · Crispy</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Japcahae.jpg/:/cr=t:0%25,l:7.93%25,w:84.14%25,h:84.14%25/rs=w:485,cg:true,m" alt="Japchae">
+            <div class="item-body">
+              <span class="item-num">04.</span>
+              <div class="item-head">
+                <h3 class="item-name">Japchae <span class="ko">잡채</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$8</span>
+                <span class="badge badge-vg" title="Vegan">VG</span>
+              </div>
+              <p class="item-desc">Korean sweet potato glass noodles</p>
+            </div>
+          </article>
+
+          <article class="item">
+            <img class="item-photo" src="https://img1.wsimg.com/isteam/ip/cd9ed0e6-8544-47f8-b820-f384e95bad3a/Crab%20Balls.jpg/:/cr=t:0%25,l:7.59%25,w:84.83%25,h:84.83%25/rs=w:493,cg:true,m" alt="Crab Balls">
+            <div class="item-body">
+              <span class="item-num">05.</span>
+              <div class="item-head">
+                <h3 class="item-name">Crab Balls <span class="ko">게살 고로케</span></h3>
+                <span class="leader"></span>
+                <span class="item-price">$7</span>
+              </div>
+              <p class="item-desc">6 crispy deep-fried wontons filled with crab, cream cheese &amp; seasoning</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="panel panel-drinks">
+          <input type="radio" name="drink-cat" id="drk-soda" class="sr-only" checked>
+          <input type="radio" name="drink-cat" id="drk-ade" class="sr-only">
+          <input type="radio" name="drink-cat" id="drk-tea" class="sr-only">
+          <input type="radio" name="drink-cat" id="drk-special" class="sr-only">
+
+          <div class="drink-row">
+            <label for="drk-soda" class="drk drk-soda">
+              <svg class="cup-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1.4 13H7.4z"/><path d="M5 8h14"/><path d="M12 8l2-6h3"/></svg>
+              <span class="drk-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSOVxcNq8HqFVY3hkrw8LhPM62cdmzicmn7R9duXiI4Q&s=10" alt="Soda"></span>
+              <span class="drk-name">SODA</span>
+            </label>
+            <label for="drk-ade" class="drk drk-ade">
+              <svg class="cup-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1.4 13H7.4z"/><path d="M5 8h14"/><path d="M12 8l2-6h3"/></svg>
+              <span class="drk-img"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHOGrRACp31S3nbVrLPim6EswDY6WRXN6QYxy-ym1E5g&s=10" alt="Pouch Ade"></span>
+              <span class="drk-name">POUCH ADE</span>
+            </label>
+            <label for="drk-tea" class="drk drk-tea">
+              <svg class="cup-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1.4 13H7.4z"/><path d="M5 8h14"/><path d="M12 8l2-6h3"/></svg>
+              <span class="drk-img"><img src="https://i.pinimg.com/736x/44/fc/19/44fc197b2552331925ed34580e7b2e53.jpg" alt="Tea"></span>
+              <span class="drk-name">TEA</span>
+            </label>
+            <label for="drk-special" class="drk drk-special">
+              <svg class="cup-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1.4 13H7.4z"/><path d="M5 8h14"/><path d="M12 8l2-6h3"/></svg>
+              <span class="drk-img"><img src="https://i.pinimg.com/736x/73/7c/d4/737cd42f4e4afa07b9927160969a5cb1.jpg" alt="K-Bop House Special"></span>
+              <span class="drk-name">HOUSE SPECIAL</span>
+            </label>
+          </div>
+
+          <div class="drink-lists">
+            <ul class="drink-list list-soda">
+              <li><span class="d-name">Coke</span><span class="leader"></span><span class="d-price">$1.50</span></li>
+              <li><span class="d-name">Diet Coke</span><span class="leader"></span><span class="d-price">$1.50</span></li>
+              <li><span class="d-name">Sprite</span><span class="leader"></span><span class="d-price">$1.50</span></li>
+              <li><span class="d-name">Sunkist Orange</span><span class="leader"></span><span class="d-price">$1.50</span></li>
+              <li><span class="d-name">Rice Punch</span><span class="leader"></span><span class="d-price">$2.50</span></li>
+              <li><span class="d-name">Pink Lemonade</span><span class="leader"></span><span class="d-price">$2.50</span></li>
+            </ul>
+
+            <ul class="drink-list list-ade">
+              <li><span class="d-name">Apple Ade</span><span class="leader"></span><span class="d-price">$4</span></li>
+              <li><span class="d-name">Blueberry Ade</span><span class="leader"></span><span class="d-price">$4</span></li>
+              <li><span class="d-name">Green Grape</span><span class="leader"></span><span class="d-price">$4</span></li>
+              <li><span class="d-name">Mango Ade</span><span class="leader"></span><span class="d-price">$4</span></li>
+              <li><span class="d-name">Melon Ade</span><span class="leader"></span><span class="d-price">$4</span></li>
+              <li><span class="d-name">Peach Ade</span><span class="leader"></span><span class="d-price">$4</span></li>
+              <li><span class="d-name">Pineapple Ade</span><span class="leader"></span><span class="d-price">$4</span></li>
+              <li><span class="d-name">Strawberry Ade</span><span class="leader"></span><span class="d-price">$4</span></li>
+              <li><span class="d-name">Watermelon Ade</span><span class="leader"></span><span class="d-price">$4</span></li>
+            </ul>
+
+            <ul class="drink-list list-tea">
+              <li class="d-group">Iced Tea</li>
+              <li><span class="d-name">Brisk Iced Tea</span><span class="leader"></span><span class="d-price">$1.50</span></li>
+              <li><span class="d-name">Gold Peak Tea</span><span class="leader"></span><span class="d-price">$2.50</span></li>
+              <li><span class="d-name">Peach Ice Tea</span><span class="leader"></span><span class="d-price">$2.50</span></li>
+              <li><span class="d-name">Plum Iced Tea</span><span class="leader"></span><span class="d-price">$4</span></li>
+              <li class="d-group">Hot Tea</li>
+              <li><span class="d-name">Jasmine Tea</span><span class="leader"></span><span class="d-price">$3.95</span></li>
+              <li><span class="d-name">Green Tea</span><span class="leader"></span><span class="d-price">$3.95</span></li>
+              <li><span class="d-name">Osulloc Premium Tea</span><span class="leader"></span><span class="d-price">$3.95</span></li>
+            </ul>
+
+            <ul class="drink-list list-special">
+              <li><span class="d-name">Dalgona Latte</span><span class="leader"></span><span class="d-price">$5</span></li>
+              <li><span class="d-name">Dalgona Caffe Latte</span><span class="leader"></span><span class="d-price">$5.50</span></li>
+              <li><span class="d-name">Dalgona Matcha Latte</span><span class="leader"></span><span class="d-price">$5.50</span></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="menu-legend">
+        <span><span class="badge">V</span> vegetarian</span>
+        <span><span class="badge badge-vg">VG</span> vegan</span>
+      </p>
+    </section>
+
+
+    <!-- ================= ADD-ON BAR =================
+         Checkboxes + labels: click a tile to select it (it giggles + turns yellow). -->
+    <section class="addons" id="addons">
+      <div class="section-head">
+        <span class="ko-eyebrow">추가 반찬</span>
+        <h2>ADD-ON BAR</h2>
+      </div>
+
+      <div class="addon-box">
+        <div class="addon-intro">
+          <h3>BEYOND<br>THE BOWL</h3>
+          <p>Tap to add · tap again to remove</p>
+        </div>
+
+        <div class="addon-grid">
+          <input type="checkbox" id="ao-kimchi" class="sr-only">
+          <label for="ao-kimchi" class="addon a-kimchi"><span class="ao-num">01.</span><span class="ao-name">Kimchi</span><span class="ao-price">$1.50</span></label>
+
+          <input type="checkbox" id="ao-mandu" class="sr-only">
+          <label for="ao-mandu" class="addon a-mandu"><span class="ao-num">02.</span><span class="ao-name">2<br>Mandu</span><span class="ao-price">$1.50</span></label>
+
+          <input type="checkbox" id="ao-spring" class="sr-only">
+          <label for="ao-spring" class="addon a-spring"><span class="ao-num">03.</span><span class="ao-name">2<br>Spring Rolls</span><span class="ao-price">$1.50</span></label>
+
+          <input type="checkbox" id="ao-egg" class="sr-only">
+          <label for="ao-egg" class="addon a-egg"><span class="ao-num">04.</span><span class="ao-name">Egg</span><span class="ao-price">$1.50</span></label>
+
+          <input type="checkbox" id="ao-pork" class="sr-only">
+          <label for="ao-pork" class="addon a-pork"><span class="ao-num">05.</span><span class="ao-name">1 Pork Roll</span><span class="ao-price">$1.50</span></label>
+
+          <input type="checkbox" id="ao-cheese" class="sr-only">
+          <label for="ao-cheese" class="addon a-cheese"><span class="ao-num">06.</span><span class="ao-name">Cheese</span><span class="ao-price">$1.50</span></label>
+
+          <input type="checkbox" id="ao-rice" class="sr-only">
+          <label for="ao-rice" class="addon a-rice"><span class="ao-num">07.</span><span class="ao-name">Extra Rice</span><span class="ao-price">$2</span></label>
+
+          <input type="checkbox" id="ao-noodle" class="sr-only">
+          <label for="ao-noodle" class="addon a-noodle"><span class="ao-num">08.</span><span class="ao-name">Extra<br>Noodles</span><span class="ao-price">$2</span></label>
+
+          <input type="checkbox" id="ao-veggies" class="sr-only">
+          <label for="ao-veggies" class="addon a-veggies"><span class="ao-num">09.</span><span class="ao-name">Extra Veggies</span><span class="ao-price">$1</span></label>
+
+          <input type="checkbox" id="ao-meat" class="sr-only">
+          <label for="ao-meat" class="addon a-meat"><span class="ao-num">10.</span><span class="ao-name">Extra Meat</span><span class="ao-price">$5</span></label>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ================= ABOUT / OUR STORY ================= -->
+    <section class="about" id="about">
+      <div class="about-photo">
+        <!-- Replace with your cupbop photo -->
+        <img src="ourcup.png" alt="A K-Bop cupbop hq">
+      </div>
+      <div class="about-text">
+        <h2>OUR STORY <span class="ko">우리의 이야기</span></h2>
+        <p>K-BOP started with one obsession: the Korean cupbop we ate standing on Seoul street corners at 2am after a night out. That chaotic, delicious, saucy cup of everything good.</p>
+        <p>We brought it to St. Louis, dialed up the spice levels, and added enough options that even your picky friend can find something to love. You're welcome, everyone.</p>
+        <ul class="stats">
+          <li><span class="stat-num">20+</span><span class="stat-label">Menu items</span></li>
+          <li><span class="stat-num">25+</span><span class="stat-label">Drinks</span></li>
+          <li><span class="stat-num">100%</span><span class="stat-label">Fresh daily</span></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ================= VISIT US / FIND US ================= -->
+    <section class="visit" id="visit">
+      <div class="section-head">
+        <span class="ko-eyebrow">찾아오세요</span>
+        <h2>FIND US</h2>
+      </div>
+
+      <div class="find-cards">
+        <div class="find-card">
+          <svg class="find-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-7.1 7-12a7 7 0 0 0-14 0c0 4.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <h3>Address</h3>
+          <p>6120 Delmar Blvd<br>St. Louis, Missouri 63112</p>
+          <a class="find-link" href="https://www.google.com/maps/search/?api=1&query=6120+Delmar+Blvd+St.+Louis+MO+63112" target="_blank" rel="noopener">Get directions →</a>
+        </div>
+        <div class="find-card">
+          <svg class="find-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <h3>Hours</h3>
+          <p>Mon – Sat : 11am – 9pm<br>Sunday : 11am – 8pm</p>
+        </div>
+        <div class="find-card">
+          <svg class="find-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+          <h3>Contact</h3>
+          <p><a href="tel:+13142963001">(314) 296-3001</a><br><a href="mailto:KBOPSTL@GMAIL.COM">KBOPSTL@GMAIL.COM</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER: DELMAR LOOP ================= -->
+  <footer class="site-footer">
+    <p class="footer-eyebrow">COME AND VISIT US @</p>
+    <div class="footer-big">
+      <span>DELMAR</span>
+      <span>LOOP</span>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-address">St. Louis, Missouri<br>6120 Delmar Blvd, STL 63112</p>
+      <div class="footer-contact">
+        <p class="footer-q">Questions or special requests?<br><span>Dietary concerns? Planning an event?</span></p>
+        <p class="footer-contact-line">
+          <strong>CONTACT US!</strong>
+          <a href="tel:+13142963001">(314) 296-3001</a>
+          <a href="mailto:KBOPSTL@GMAIL.COM">KBOPSTL@GMAIL.COM</a>
+        </p>
+      </div>
+    </div>
+    <p class="copyright">© 2026 K-Bop STL</p>
+  </footer>
+
+</body>
+</html>
