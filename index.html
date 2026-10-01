@@ -1,28 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gianna Homepage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Gianna's Class Homepage</h1>
-    <h2>Exercises</h2>
-        <ul>
-            <li><a href="profile.html">Profile</a></li>
-            <li><a href="https://www.figma.com/design/Jzg8cdvoXIfK3bViZ9Jtfv/Exercise--Poster?node-id=0-1&t=gLLbp9lONyQNsL2E-1">Poster</a></li>
-        </ul>
-    <h2>Reading & Media Responses</h2>
-        <ul>
-            <li><a href="reading1.html">Why Restaurant Websites...</a></li>
-            <li><a href="reading2.html">The New Turing Test</a></li>
-            <li><a href="reading3.html">My website is a shifting house...</a></li>
-        </ul>
-    <h2>Projects</h2>
-        <ul>
-            <li><a href="project1/project1.html">P1. Restraunt Menu Variations</a></li>
-            <li>P2. Book to Website</li>
-            <li>P3. Stand by Mode</li>
-        </ul>
+<body id="top">
+
+  <header class="bar">
+    <span>Gianna</span>
+    <a class="bar-mid" href="#projects">Projects</a>
+    <span>Archive</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1 class="display">VPS FL26<em>.</em></h1>
+      <p class="subtitle">Gianna's Class Homepage.</p>
+
+      <nav class="jump">
+        <a href="#exercises"><span>↘</span><span>Exercises<small>(2)</small></span></a>
+        <a href="#readings"><span>↘</span><span>Reading &amp;<br>Media<small>(3)</small></span></a>
+        <a href="#projects"><span>↘</span><span>Projects<small>(3)</small></span></a>
+      </nav>
+    </section>
+
+    <section class="block" id="exercises">
+      <div class="block-head">
+        <span class="idx">01</span>
+        <h2>Exercises</h2>
+      </div>
+      <ol class="rows">
+        <li><a class="row" href="profile.html">
+          <span class="n">01</span><span class="t">Profile</span><span class="k">HTML</span><span class="arr">→</span>
+        </a></li>
+        <li><a class="row" href="https://www.figma.com/design/Jzg8cdvoXIfK3bViZ9Jtfv/Exercise--Poster?node-id=0-1&amp;t=gLLbp9lONyQNsL2E-1" target="_blank" rel="noopener">
+          <span class="n">02</span><span class="t">Poster</span><span class="k">Figma</span><span class="arr">↗</span>
+        </a></li>
+      </ol>
+    </section>
+
+    <section class="block" id="readings">
+      <div class="block-head">
+        <span class="idx">02</span>
+        <h2>Reading &amp;<br>Media Responses</h2>
+      </div>
+      <ol class="rows">
+        <li><a class="row" href="reading1.html">
+          <span class="n">01</span><span class="t">Why Restaurant Websites…</span><span class="k">Response</span><span class="arr">→</span>
+        </a></li>
+        <li><a class="row" href="reading2.html">
+          <span class="n">02</span><span class="t">The New Turing Test</span><span class="k">Response</span><span class="arr">→</span>
+        </a></li>
+        <li><a class="row" href="reading3.html">
+          <span class="n">03</span><span class="t">My website is a shifting house…</span><span class="k">Response</span><span class="arr">→</span>
+        </a></li>
+      </ol>
+    </section>
+
+    <section class="block" id="projects">
+      <div class="block-head">
+        <span class="idx">03</span>
+        <h2>Projects</h2>
+      </div>
+      <ol class="rows">
+        <li><a class="row" href="project1/project1.html">
+          <span class="n">P1</span><span class="t">Restaurant Menu Variations</span><span class="k">25 + Final</span><span class="arr">→</span>
+        </a></li>
+        <li><div class="row is-soon">
+          <span class="n">P2</span><span class="t">Book to Website</span><span class="k">Upcoming</span><span class="arr">→</span>
+        </div></li>
+        <li><div class="row is-soon">
+          <span class="n">P3</span><span class="t">Stand by Mode</span><span class="k">Upcoming</span><span class="arr">→</span>
+        </div></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span class="lbl">Home</span>
+    <div class="foot-row">
+      <span>©2026 Gianna</span>
+      <a class="top-btn" href="#top">↑ Top</a>
+    </div>
+  </footer>
 </body>
 </html>
