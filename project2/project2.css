@@ -1,7 +1,7 @@
 /* Project 2 — extras on top of ../style.css */
 
-/* P2 has three stages instead of five */
-.rail.three { grid-template-columns: repeat(3, 1fr); }
+/* P2 has four stages instead of five */
+.rail.four { grid-template-columns: repeat(4, 1fr); }
 
 /* Small caption under row titles */
 .stage .rows .row .t small {
@@ -13,5 +13,5 @@
 }
 
 @media (max-width: 760px) {
-  .rail.three { grid-template-columns: 1fr; }
+  .rail.four { grid-template-columns: repeat(2, 1fr); }
 }
