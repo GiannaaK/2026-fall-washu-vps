@@ -1,0 +1,264 @@
+/* =========================================================
+   SILLAGE — base styles, View 1, cursor
+   ========================================================= */
+
+:root {
+  --paper: #FFFFFF;
+  --panel: #FAF9F6;
+  --ink:   #1A1A1A;
+  --muted: #8A8A8A;
+  --faint: #BDBDBD;
+  --line:  #D9D9D9;
+  --arc:   linear-gradient(#FFFFFF, #F3F3F3);
+  --ease:  cubic-bezier(0.22, 1, 0.36, 1);
+
+  --serif:  "Cormorant Garamond", "Times New Roman", serif;
+  --sans:   "Inter", "Helvetica Neue", Arial, sans-serif;
+  --display: "Italiana", "Cormorant Garamond", serif;
+  --mono:    "DM Mono", "SFMono-Regular", Menlo, monospace;
+
+  /* light bluish-grey highlight that sweeps over clickable text */
+  --highlight: rgba(203, 213, 224, 0.6);
+
+  /* ingredient colour — set by script.js from data.js (color / deep) when a subpage opens */
+  --accent: #E4E4E4;
+  --deep:   #8A8A8A;
+
+  /* how strong the colour shows (0% = white, 100% = the full palette colour).
+     Lower these numbers to make every page softer. */
+  --tint-strong: 62%;   /* ingredient disc, hover disc on the ingredients page */
+  --tint-soft:   40%;   /* halo around the chosen point, keyword tags, Explore more */
+  --tint-wash:   20%;   /* the big curved panel on the left */
+  --tint-arc:    30%;   /* the big arc on the ingredients page when you hover */
+
+  --strong: color-mix(in srgb, var(--accent) var(--tint-strong), #FFFFFF);
+  --soft:   color-mix(in srgb, var(--accent) var(--tint-soft), #FFFFFF);
+  --wash:   color-mix(in srgb, var(--accent) var(--tint-wash), #FFFFFF);
+
+  /* Perfume cursor — move the image so the NOZZLE sits on the mouse point.
+     Bigger numbers = image moves further up/left. */
+  --cursor-size: 80px;
+  --cursor-x: 14px;
+  --cursor-y: 10px;
+}
+
+/* ---------- reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; }
+ul { list-style: none; margin: 0; padding: 0; }
+h1, h2, h3, p { margin: 0; font-weight: inherit; }
+
+:focus-visible { outline: 1px solid var(--muted); outline-offset: 6px; }
+
+/* ---------- shared text styles ---------- */
+.t-label {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.t-body {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ---------- views + cross-fade ---------- */
+.view {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition:
+    opacity 700ms var(--ease),
+    transform 700ms var(--ease),
+    visibility 0s linear 700ms;
+}
+.view.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity 700ms var(--ease) 120ms,
+    transform 700ms var(--ease) 120ms,
+    visibility 0s;
+}
+
+/* ---------- VIEW 1 — landing ---------- */
+.home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home__title {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 1.4em;
+  margin-right: -1.4em;            /* keeps the spaced word optically centred */
+  color: var(--ink);
+}
+
+.home__envelope {
+  display: block;
+  margin-top: 24px;
+  width: clamp(280px, 20vw, 360px);
+  transition: transform 700ms var(--ease), filter 700ms var(--ease);
+}
+.home__envelope:hover,
+.home__envelope:focus-visible {
+  transform: translateY(-4px);
+  filter: drop-shadow(0 14px 18px rgba(0, 0, 0, 0.07));
+}
+
+.home__caption {
+  position: relative;
+  margin-top: 24px;
+}
+.home__send {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.45em;
+  margin-right: -0.45em;
+}
+.home__script {
+  position: absolute;
+  left: 18%;
+  top: 9px;
+  white-space: nowrap;
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #A9A9A9;
+  padding: 1px 4px;
+}
+
+/* clickable text that opens THE LABEL: a soft highlight sweeps in on hover */
+.label-trigger {
+  background-image: linear-gradient(var(--highlight), var(--highlight));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  transition: background-size 550ms var(--ease), color 400ms var(--ease);
+}
+.label-trigger:hover,
+.label-trigger:focus-visible {
+  background-size: 100% 100%;
+  color: var(--ink);
+}
+
+/* ---------- top bar: THE LABEL + sound toggle ---------- */
+.topbar {
+  position: fixed;
+  top: 18px;
+  right: 24px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.topbar__label,
+.sound-toggle {
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--faint);
+  padding: 4px 4px;
+  transition: color 400ms var(--ease);
+}
+.topbar__label { color: var(--muted); }
+.sound-toggle:hover { color: var(--ink); }
+
+/* ---------- perfume cursor ---------- */
+.custom-cursor,
+.custom-cursor * { cursor: none !important; }
+
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: var(--cursor-size);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms var(--ease);
+  will-change: transform;
+}
+.cursor.is-visible { opacity: 1; }
+.cursor img {
+  width: 100%;
+  transform-origin: 20% 20%;
+  transition: transform 150ms ease-out;
+}
+.cursor.is-spraying img { transform: rotate(-6deg); }
+
+html:not(.custom-cursor) .cursor { display: none; }
+
+/* grey dot cursor — category pages only */
+.cursor-dot {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms var(--ease);
+  will-change: transform;
+}
+.cursor-dot::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  left: -5px;
+  top: -5px;
+  border-radius: 50%;
+  background: var(--deep);
+  transition: transform 400ms var(--ease), background-color 400ms var(--ease);
+}
+.cursor-dot.is-hover::before {
+  transform: scale(2.8);
+  background: color-mix(in srgb, var(--deep) 30%, transparent);
+}
+
+/* switch between the two cursors */
+html.mode-dot .cursor { opacity: 0 !important; }
+html.mode-dot .cursor-dot.is-visible { opacity: 1; }
+html:not(.custom-cursor) .cursor-dot { display: none; }
+
+/* mist particles */
+.mist {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  border-radius: 50%;
+  background: rgba(190, 190, 190, 0.5);
+  filter: blur(0.6px);
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view, .view.is-active { transition-duration: 1ms; }
+}

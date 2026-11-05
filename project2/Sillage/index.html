@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" class="custom-cursor">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SILLAGE — Scent to Send</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Mono:wght@300;400&family=Inter:ital,wght@0,300;0,400;1,300;1,400&family=Italiana&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="views.css">
+  <link rel="stylesheet" href="label.css">
+</head>
+<body>
+
+  <!-- top-right: THE LABEL + sound on / off -->
+  <div class="topbar">
+    <button class="topbar__label label-trigger" type="button" data-open-label>THE LABEL</button>
+    <button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="true">SOUND ON</button>
+  </div>
+
+  <main>
+
+    <!-- VIEW 1 — Landing -->
+    <section id="view-home" class="view" aria-label="Sillage">
+      <div class="home">
+        <h1 class="home__title">SILLAGE</h1>
+
+        <a class="home__envelope" href="#notes" aria-label="Open the envelope">
+          <img src="assets/images/envelope-full.png"
+               alt="A glassine envelope holding five fragrance ingredients">
+        </a>
+
+        <div class="home__caption">
+          <p class="home__send">SCENT TO SEND</p>
+          <!-- clicking this line opens THE LABEL -->
+          <button class="home__script label-trigger" type="button" data-open-label>
+            A scent composed of what stays with me
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIEW 2 — The ingredients -->
+    <section id="view-notes" class="view" aria-label="The ingredients">
+      <div class="notes" id="notes-stage">
+        <div class="notes__arc" aria-hidden="true"></div>
+        <a class="notes__envelope" href="#home" aria-label="Back to the envelope">
+          <img src="assets/images/envelop-empty.png" alt="">
+        </a>
+        <ul class="notes__ingredients" id="ingredients"></ul>
+      </div>
+    </section>
+
+    <!-- VIEW 3 — Category page (filled by script.js) -->
+    <section id="view-category" class="view" aria-label="Category"></section>
+
+  </main>
+
+  <!-- THE LABEL — popup card (filled by label.js from data.js) -->
+  <div id="label" class="label-overlay" hidden>
+    <div class="label-card" role="dialog" aria-modal="true" aria-labelledby="label-title" id="label-card"></div>
+  </div>
+
+  <!-- Perfume cursor (cursor.js) -->
+  <div id="cursor" class="cursor" aria-hidden="true">
+    <img id="cursor-img" src="assets/cursor/hand-idle.png" alt="">
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script src="label.js"></script>
+  <script src="cursor.js"></script>
+</body>
+</html>
