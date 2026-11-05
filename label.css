@@ -1,0 +1,192 @@
+/* =========================================================
+   SILLAGE — THE LABEL (popup card)
+   Inspired by a perfume label (bordered frame, dotted fields)
+   and a product spec card (mono type, side notches, timeline).
+   ========================================================= */
+
+/* ---------- background ---------- */
+.label-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  padding: 4vh 16px;
+  overflow-y: auto;                         /* on short screens the whole card scrolls */
+  scrollbar-width: none;
+  background: rgba(248, 248, 246, 0.62);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  opacity: 0;
+  transition: opacity 500ms var(--ease);
+}
+.label-overlay::-webkit-scrollbar { display: none; }
+.label-overlay.is-open { opacity: 1; }
+.label-overlay[hidden] { display: none; }
+
+/* ---------- the card ---------- */
+.label-card {
+  --notch-y: 150px;                         /* height of the side notches */
+  position: relative;
+  width: min(470px, 100%);
+  margin: auto;                             /* centred when it fits */
+  flex: none;
+  background: #EFEEEA;
+  border-radius: 16px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  font-family: var(--mono);
+  color: var(--ink);
+  transform: translateY(14px) scale(0.985);
+  transition: transform 600ms var(--ease);
+
+  /* two half-circle notches cut into the sides, like a ticket */
+  -webkit-mask:
+    radial-gradient(circle 11px at 0 var(--notch-y), transparent 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 11px at 100% var(--notch-y), transparent 98%, #000) right / 51% 100% no-repeat;
+          mask:
+    radial-gradient(circle 11px at 0 var(--notch-y), transparent 98%, #000) left / 51% 100% no-repeat,
+    radial-gradient(circle 11px at 100% var(--notch-y), transparent 98%, #000) right / 51% 100% no-repeat;
+}
+.label-overlay.is-open .label-card { transform: none; }
+
+/* thin inner frame, like the printed border of a perfume label */
+.label-card__frame {
+  margin: 16px;
+  padding: 0 26px 22px;
+  border: 1px solid rgba(26, 26, 26, 0.45);
+}
+
+/* ---------- header ---------- */
+.label-head {
+  height: calc(var(--notch-y) - 16px);       /* bottom line lines up with the notches */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 1px dashed rgba(26, 26, 26, 0.3);
+}
+.label-title {
+  font-family: var(--display);
+  font-size: 40px;
+  letter-spacing: 0.22em;
+  margin-right: -0.22em;
+  line-height: 1;
+}
+.label-tagline {
+  margin-top: 12px;
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  color: #444;
+  max-width: 340px;
+  text-wrap: balance;
+}
+
+/* ---------- Field: value ---------- */
+.label-fields { margin: 22px 0 0; }
+.label-field { margin-top: 14px; }
+.label-field dt,
+.label-section__title {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.label-field dd {
+  margin: 4px 0 0;
+  padding: 0 0 6px 18px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #7A7A7A;
+  border-bottom: 1px dotted rgba(26, 26, 26, 0.45);
+}
+
+/* ---------- Why a fragrance / How to read ---------- */
+.label-section { margin-top: 24px; }
+.label-why {
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: #555;
+}
+.label-small {
+  margin-top: 8px;
+  font-size: 10.5px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #7A7A7A;
+}
+.label-small--end { margin-top: 16px; font-style: italic; }
+
+.label-notes { margin-top: 14px; display: grid; gap: 14px; }
+.label-note__head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6A6A6A;
+}
+.label-note__line {
+  position: relative;
+  height: 1px;
+  margin: 9px 0 8px;
+  background: rgba(26, 26, 26, 0.25);
+}
+.label-note__line i {
+  position: absolute;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #555;
+  transform: translate(-50%, -50%);
+}
+.label-note__text {
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.6;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #333;
+}
+
+/* ---------- footer ---------- */
+.label-foot {
+  margin-top: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.label-close {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 4px;
+  margin-left: -4px;
+  background-image: linear-gradient(var(--highlight), var(--highlight));
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 500ms var(--ease);
+}
+.label-close:hover,
+.label-close:focus-visible { background-size: 100% 100%; }
+.label-sign {
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9A9A9A;
+}
+
+/* keep the page still behind the card */
+html.label-open main { pointer-events: none; }
+
+@media (max-width: 520px) {
+  .label-card__frame { margin: 12px; padding: 0 18px 18px; }
+  .label-title { font-size: 32px; }
+}

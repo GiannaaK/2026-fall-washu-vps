@@ -1,101 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="custom-cursor">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gianna Homepage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SILLAGE — Scent to Send</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body id="top">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=DM+Mono:wght@300;400&family=Inter:ital,wght@0,300;0,400;1,300;1,400&family=Italiana&display=swap" rel="stylesheet">
 
-  <header class="bar">
-    <span>Gianna</span>
-    <a class="bar-mid" href="#projects">Projects</a>
-    <span>Archive</span>
-  </header>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="views.css">
+  <link rel="stylesheet" href="label.css">
+</head>
+<body>
+
+  <!-- top-right: THE LABEL + sound on / off -->
+  <div class="topbar">
+    <button class="topbar__label label-trigger" type="button" data-open-label>THE LABEL</button>
+    <button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="true">SOUND ON</button>
+  </div>
 
   <main>
-    <section class="hero">
-      <h1 class="display">VPS FL26<em>.</em></h1>
-      <p class="subtitle">Gianna's Class Homepage.</p>
 
-      <nav class="jump">
-        <a href="#exercises"><span>↘</span><span>Exercises<small>(2)</small></span></a>
-        <a href="#readings"><span>↘</span><span>Reading &amp;<br>Media<small>(6)</small></span></a>
-        <a href="#projects"><span>↘</span><span>Projects<small>(3)</small></span></a>
-      </nav>
-    </section>
+    <!-- VIEW 1 — Landing -->
+    <section id="view-home" class="view" aria-label="Sillage">
+      <div class="home">
+        <h1 class="home__title">SILLAGE</h1>
 
-    <section class="block" id="exercises">
-      <div class="block-head">
-        <span class="idx">01</span>
-        <h2>Exercises</h2>
+        <a class="home__envelope" href="#notes" aria-label="Open the envelope">
+          <img src="assets/images/envelope-full.png"
+               alt="A glassine envelope holding five fragrance ingredients">
+        </a>
+
+        <div class="home__caption">
+          <p class="home__send">SCENT TO SEND</p>
+          <!-- clicking this line opens THE LABEL -->
+          <button class="home__script label-trigger" type="button" data-open-label>
+            A scent composed of what stays with me
+          </button>
+        </div>
       </div>
-      <ol class="rows">
-        <li><a class="row" href="profile.html">
-          <span class="n">01</span><span class="t">Profile</span><span class="k">HTML</span><span class="arr">→</span>
-        </a></li>
-        <li><a class="row" href="https://www.figma.com/design/Jzg8cdvoXIfK3bViZ9Jtfv/Exercise--Poster?node-id=0-1&amp;t=gLLbp9lONyQNsL2E-1" target="_blank" rel="noopener">
-          <span class="n">02</span><span class="t">Poster</span><span class="k">Figma</span><span class="arr">↗</span>
-        </a></li>
-      </ol>
     </section>
 
-    <section class="block" id="readings">
-      <div class="block-head">
-        <span class="idx">02</span>
-        <h2>Reading &amp;<br>Media Responses</h2>
+    <!-- VIEW 2 — The ingredients -->
+    <section id="view-notes" class="view" aria-label="The ingredients">
+      <div class="notes" id="notes-stage">
+        <div class="notes__arc" aria-hidden="true"></div>
+        <a class="notes__envelope" href="#home" aria-label="Back to the envelope">
+          <img src="assets/images/envelop-empty.png" alt="">
+        </a>
+        <ul class="notes__ingredients" id="ingredients"></ul>
       </div>
-      <ol class="rows">
-        <li><a class="row" href="reading1.html">
-          <span class="n">01</span><span class="t">Why Restaurant Websites…</span><span class="k">Response</span><span class="arr">→</span>
-        </a></li>
-        <li><a class="row" href="reading2.html">
-          <span class="n">02</span><span class="t">The New Turing Test</span><span class="k">Response</span><span class="arr">→</span>
-        </a></li>
-        <li><a class="row" href="reading3.html">
-          <span class="n">03</span><span class="t">My website is a shifting house…</span><span class="k">Response</span><span class="arr">→</span>
-        </a></li>
-        <li><a class="row" href="reading4.html">
-          <span class="n">04</span><span class="t">ENO</span><span class="k">Response</span><span class="arr">→</span>
-        </a></li>
-         <li><a class="row" href="reading5.html">
-          <span class="n">05</span><span class="t">The Forbidden Zone</span><span class="k">Response</span><span class="arr">→</span>
-        </a></li>
-         <li><a class="row" href="reading6.html">
-          <span class="n">06</span><span class="t">There are No Gardens on the Internet</span><span class="k">Response</span><span class="arr">→</span>
-        </a></li>
-      </ol>
     </section>
 
-    <section class="block" id="projects">
-      <div class="block-head">
-        <span class="idx">03</span>
-        <h2>Projects</h2>
-      </div>
-      <ol class="rows">
-        <li><a class="row" href="project1/project1.html">
-          <span class="n">P1</span><span class="t">Restaurant Menu Variations</span><span class="k">25 + Final</span><span class="arr">→</span>
-        </a></li>
-        <li><a class="row" href="project2/project2.html">
-          <span class="n">P2</span><span class="t">Website As A Container</span><span class="k">In Progress</span><span class="arr">→</span>
-        </a></li>
-        <li><div class="row is-soon">
-          <span class="n">P3</span><span class="t">Stand by Mode</span><span class="k">Upcoming</span><span class="arr">→</span>
-        </div></li>
-      </ol>
-    </section>
+    <!-- VIEW 3 — Category page (filled by script.js) -->
+    <section id="view-category" class="view" aria-label="Category"></section>
+
   </main>
 
-  <footer class="foot">
-    <span class="lbl">Home</span>
-    <div class="foot-row">
-      <span>©2026 Gianna</span>
-      <a class="top-btn" href="#top">↑ Top</a>
-    </div>
-  </footer>
+  <!-- THE LABEL — popup card (filled by label.js from data.js) -->
+  <div id="label" class="label-overlay" hidden>
+    <div class="label-card" role="dialog" aria-modal="true" aria-labelledby="label-title" id="label-card"></div>
+  </div>
+
+  <!-- Perfume cursor (cursor.js) -->
+  <div id="cursor" class="cursor" aria-hidden="true">
+    <img id="cursor-img" src="assets/cursor/hand-idle.png" alt="">
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script src="label.js"></script>
+  <script src="cursor.js"></script>
 </body>
 </html>
